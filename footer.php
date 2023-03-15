@@ -1,7 +1,7 @@
 </div>
 <!-- end wrap -->
 
-<footer>
+<footer class="bg-white rounded-lg m-2 py-4 lg:py-8 lg:p-8">
   <div class="container">
     <div class="flex flex-col lg:flex-row lg:justify-between">
       <div class="mb-4 lg:mb-0">
