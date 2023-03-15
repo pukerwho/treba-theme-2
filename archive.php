@@ -15,16 +15,15 @@
           </div>
           <h1 class="text-3xl lg:text-4xl font-bold"><?php the_archive_title(); ?></h1>
         </div>
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div class="flex flex-wrap lg:-mx-5 mb-4">
-          <!-- Post item -->
-          <div class="w-full lg:w-1/3 lg:px-5 mb-5">
-            <?php get_template_part('template-parts/post-item'); ?>
-          </div>
-          <!-- END Post item -->
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <!-- Post item -->
+            <div class="w-full lg:w-1/3 lg:px-5 mb-5">
+              <?php get_template_part('template-parts/post-item'); ?>
+            </div>
+            <!-- END Post item -->
+          <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
-
         <div>
           <?php posts_nav_link(); ?>
         </div>
