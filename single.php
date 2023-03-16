@@ -69,7 +69,7 @@ $countNumber = tutCount(get_the_ID());
               </div>
             </div>
           </div>
-          <div class="content" itemprop="articleBody">
+          <div class="content mb-8" itemprop="articleBody">
             <?php the_content(); ?>
           </div>
           <!-- Хлебные крошки -->
