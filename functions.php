@@ -207,3 +207,18 @@ function add_new_post_service_city($service_id) {
     }
   }
 }
+
+//Carbonfields + Polylang
+function crb_get_i18n_suffix() {
+    $suffix = '';
+    if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
+        return $suffix;
+    }
+    $suffix = '_' . ICL_LANGUAGE_CODE;
+    return $suffix;
+}
+
+function crb_get_i18n_theme_option( $option_name ) {
+  $suffix = crb_get_i18n_suffix();
+  return carbon_get_theme_option( $option_name . $suffix );
+}
