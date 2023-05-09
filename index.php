@@ -107,7 +107,7 @@
               'post_type' => 'post', 
               'posts_per_page' => 9,
               'order' => 'DESC',
-              // 'offset' => 5,
+              'offset' => 5,
             ) );
             if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
           ?>
