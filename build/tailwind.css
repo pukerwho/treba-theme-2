@@ -677,6 +677,11 @@ video {
   margin-right: -0.25rem;
 }
 
+.-mx-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
 .-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -700,11 +705,6 @@ video {
 .-my-10 {
   margin-top: -2.5rem;
   margin-bottom: -2.5rem;
-}
-
-.-mx-2 {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
 }
 
 .mb-10 {
@@ -1831,8 +1831,8 @@ main {
 }
 
 .pagination .page-numbers {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1850,23 +1850,25 @@ main {
   border-radius: 0.25rem;
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(98 102 240 / var(--tw-border-opacity));
+  border-color: rgb(30 41 59 / var(--tw-border-opacity));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 
 .pagination .page-numbers:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(98 102 240 / var(--tw-bg-opacity));
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .pagination .page-numbers.current {
+  --tw-border-opacity: 1;
+  border-color: rgb(11 11 15 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(11 11 15 / var(--tw-text-opacity));
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .content a {
@@ -2323,6 +2325,11 @@ main {
     padding-right: 1rem;
   }
 
+  .lg\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .lg\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2341,11 +2348,6 @@ main {
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-  }
-
-  .lg\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 
   .lg\:pr-4 {

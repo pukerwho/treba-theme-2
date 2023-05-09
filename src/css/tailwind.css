@@ -73,10 +73,10 @@ main {
 }
 
 .pagination .page-numbers {
-  @apply inline-flex items-center justify-center w-10 h-10 border border-primary rounded hover:text-white hover:bg-primary px-3 mx-3;
+  @apply inline-flex items-center justify-center w-10 h-10 border border-slate-800 rounded hover:text-white hover:bg-slate-800 px-3 mx-1;
 }
 .pagination .page-numbers.current {
-  @apply bg-white text-main-dark;
+  @apply bg-slate-800 border-main-dark text-gray-200;
 }
 
 .content a {

@@ -7,10 +7,17 @@
       <div class="mb-4 lg:mb-0">
         © Treba Solutions, 2023
       </div>
-      <div>
-        <a href="https://webgolovolomki.com/">
-          <img src="https://treba-solutions.com/wp-content/uploads/2023/01/webg.jpg" alt="Web Головоломки" width="20">
-        </a>
+      <div class="flex items-center -mx-2">
+        <div class="px-2">
+          <a href="https://webgolovolomki.com/">
+            <img src="https://treba-solutions.com/wp-content/uploads/2023/01/webg.jpg" alt="Web Головоломки" width="20">
+          </a>
+        </div>
+        <div class="px-2">
+          <a href="https://d-art.org.ua/">
+            <img src="https://treba-solutions.com/wp-content/uploads/2023/05/dart-favicon.jpg" alt="D-Art" width="20">
+          </a>
+        </div>
       </div>
     </div>
   </div>

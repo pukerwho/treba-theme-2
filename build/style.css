@@ -1,6 +1,7 @@
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/css/main.scss ***!
   \******************************************************************************************************************************************************/
+@charset "UTF-8";
 .modal {
   display: none;
 }
@@ -80,4 +81,18 @@ body {
   background-repeat: no-repeat;
   -webkit-transform: translateY(-50%) translateX(-100%);
   transform: translateY(-50%) translateX(-100%);
+}
+
+.pagination .page-numbers.next:before {
+  content: "⮕";
+  color: #1e293b;
+}
+
+.pagination .page-numbers.prev:before {
+  content: "⬅";
+  color: #1e293b;
+}
+
+.pagination .page-numbers:hover:before {
+  color: white;
 }

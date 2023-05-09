@@ -39,3 +39,16 @@ body {
     }
   }
 }
+
+.pagination .page-numbers.next:before {
+  content: "⮕";
+  color: #1e293b;
+}
+
+.pagination .page-numbers.prev:before {
+  content: "⬅";
+  color: #1e293b;
+}
+.pagination .page-numbers:hover:before {
+  color: white;
+}

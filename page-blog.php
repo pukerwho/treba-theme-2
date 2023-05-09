@@ -27,7 +27,7 @@ Template Name: Blog
             $all_posts = new WP_Query( array( 
               'post_type' => 'post',
               'paged' => $current, 
-              'posts_per_page' => 5,
+              'posts_per_page' => 12,
               'order' => 'DESC'
             ) );
             if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
@@ -37,7 +37,7 @@ Template Name: Blog
             </div>
           <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
-        <div>
+        <div class="pagination -mx-1">
           <?php 
             $big = 9999999991; // уникальное число
             echo paginate_links( array(
