@@ -5,3 +5,4 @@ import "./tabs.js";
 import "./dark-light.js";
 import "./chars.js";
 import "./menu.js";
+import "./subjects.js";
