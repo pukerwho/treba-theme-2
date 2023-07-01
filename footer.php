@@ -1,6 +1,25 @@
 </div>
 <!-- end wrap -->
 
+<div class="bg-white rounded-lg m-2 py-4 lg:py-8 lg:p-8">
+  <div class="container">
+    <div class="text-xl font-bold mb-4">🔍 <?php _e("Популярні запити", "treba-wp"); ?>:</div>
+    <div class="flex flex-wrap lg:-mx-2 px-2 py-2">
+      <?php 
+        $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $footer_links = footer_links($current_url);
+        foreach ($footer_links as $footer_link):
+      ?>
+        <div class="w-full lg:w-1/2 xl:w-1/3 px-2 mb-2">
+          <?php 
+            echo $footer_link->top_links; 
+          ?>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</div>
+
 <footer class="bg-white rounded-lg m-2 py-4 lg:py-8 lg:p-8">
   <div class="container">
     <div class="flex flex-col lg:flex-row lg:justify-between">
