@@ -7,7 +7,14 @@
         $new_post = new WP_Query( array( 
           'post_type' => 'post', 
           'posts_per_page' => 1,
-          'order' => 'DESC'
+          'order' => 'DESC',
+          'meta_query' => array(
+            array(
+              'key' => '_crb_post_mainhide',
+              'value' => 'yes',
+              'compare' => '!='
+            ),
+          ),
         ) );
         if ($new_post->have_posts()) : while ($new_post->have_posts()) : $new_post->the_post(); 
       ?>
@@ -58,6 +65,13 @@
           'posts_per_page' => 4,
           'order' => 'DESC',
           'offset' => 1,
+          'meta_query' => array(
+            array(
+              'key' => '_crb_post_mainhide',
+              'value' => 'yes',
+              'compare' => '!='
+            ),
+          ),
         ) );
         if ($new_posts->have_posts()) : while ($new_posts->have_posts()) : $new_posts->the_post(); 
       ?>
@@ -108,6 +122,13 @@
               'posts_per_page' => 9,
               'order' => 'DESC',
               'offset' => 5,
+              'meta_query' => array(
+                array(
+                  'key' => '_crb_post_mainhide',
+                  'value' => 'yes',
+                  'compare' => '!='
+                ),
+              ),
             ) );
             if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
           ?>
