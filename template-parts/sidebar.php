@@ -38,6 +38,13 @@
           'post_type' => 'post', 
           'posts_per_page' => 5,
           'orderby' => 'rand',
+          'meta_query' => array(
+            array(
+              'key' => '_crb_post_mainhide',
+              'value' => 'yes',
+              'compare' => '!='
+            ),
+          ),
         ) );
         if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
       ?>
