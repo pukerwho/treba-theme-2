@@ -71,7 +71,7 @@ $countNumber = tutCount(get_the_ID());
           </div>
           <div class="content mb-8" itemprop="articleBody">
             <div class="single-subjects hidden mb-5">
-              <div class="text-2xl text-slate-800 font-black uppercase mb-4"><?php _e("Зміст", "treba-wp"); ?></div>
+              <div class="text-2xl text-slate-800 dark:text-gray-300 font-black uppercase mb-4"><?php _e("Зміст", "treba-wp"); ?></div>
               <div class="single-subjects-inner"></div>
             </div>
             <?php the_content(); ?>
