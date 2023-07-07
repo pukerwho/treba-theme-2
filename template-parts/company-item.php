@@ -1,5 +1,5 @@
-<div class="bg-blue-50 rounded-lg px-4 py-3">
-  <div class="text-xl font-medium border-b border-gray-200 dark:border-zinc-500 truncate pb-2 mb-2"><a href="<?php the_permalink(); ?>" class="hover:text-indigo-500 dark:hover:text-indigo-400"><?php the_title(); ?></a></div>
+<div class="bg-blue-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+  <div class="text-xl font-medium border-b border-gray-200 dark:border-zinc-500 truncate pb-2 mb-2"><a href="<?php the_permalink(); ?>" class="dark:text-blue-600 hover:text-indigo-500 dark:hover:text-blue-500"><?php the_title(); ?></a></div>
   <div class="mb-2">
     <span class="font-medium"><?php _e("Країна", "treba-wp"); ?></span>: <?php echo carbon_get_the_post_meta('crb_company_country'); ?>
   </div>

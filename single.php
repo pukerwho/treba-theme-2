@@ -9,11 +9,11 @@ $countNumber = tutCount(get_the_ID());
       <?php get_template_part("template-parts/sidebar"); ?>
     </div>
     <div class="w-full lg:w-3/4 lg:px-5">
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article itemscope itemtype="http://schema.org/Article">
           <h1 class="text-2xl uppercase font-bold mb-4" itemprop="headline"><?php the_title(); ?></h1>
-          <div class="text-sm opacity-75 border-b border-gray-200 mb-3 pb-3">
+          <div class="text-sm opacity-75 border-b border-gray-200 dark:border-slate-400 mb-3 pb-3">
             <div>
               <span class="italic"><?php _e("Автор", "treba-wp"); ?></span>: 
               <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
@@ -41,7 +41,7 @@ $countNumber = tutCount(get_the_ID());
             </div>
             <div class="w-full xl:w-1/4  xl:px-4">
               <div class="sticky top-4">
-                <div class="border-b border-gray-300 pb-4 mb-4">
+                <div class="border-b border-gray-300 dark:border-slate-400 pb-4 mb-4">
                   <div class="text-lg mb-2">📎 <?php _e("Поділитися", "treba-wp"); ?></div>
                   <div>
                     <?php do_action('show_social_share_buttons'); ?>
@@ -91,7 +91,7 @@ $countNumber = tutCount(get_the_ID());
                 </a>                        
                 <meta itemprop="position" content="2">
               </li>
-              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item text-gray-600 px-4">
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item text-gray-600 dark:text-gray-400 px-4">
                 <span itemprop="name"><?php the_title(); ?></span>
                 <meta itemprop="position" content="3" />
               </li>
@@ -102,7 +102,7 @@ $countNumber = tutCount(get_the_ID());
         <?php endwhile; endif; wp_reset_postdata(); ?>
       </div>
       
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <div class="flex items-center mb-8">
           <div class="bg-slate-800 text-gray-300 rounded-lg p-1 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 lg:w-8 h-6 lg:h-8">

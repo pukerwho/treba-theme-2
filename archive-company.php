@@ -6,7 +6,7 @@
       <?php get_template_part("template-parts/sidebar"); ?>
     </div>
     <div class="w-full lg:w-3/4 lg:px-5">
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <div class="flex items-center mb-8">
           <div class="bg-slate-800 text-gray-300 rounded-lg p-1 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 lg:w-8 h-6 lg:h-8">
@@ -21,7 +21,7 @@
           $services = get_terms(array( 'taxonomy' => 'services', 'parent' => 0 ));
           foreach($services as $service): ?>
             <div class="mb-2 px-1">
-              <div class="relative bg-zinc-200 dark:bg-zinc-700 hover:bg-white dark:hover:bg-zinc-800 border border-zinc-200 dark:border-transparent rounded-lg px-4 py-2">
+              <div class="relative bg-zinc-200 dark:bg-slate-800 hover:bg-white dark:hover:bg-slate-900 border border-zinc-200 dark:border-transparent rounded-lg px-4 py-2">
                 <a href="<?php echo get_term_link($service->term_id, 'services') ?>" class="absolute-link"></a>
                 <div><span class=""><?php echo $service->name; ?></span></div>
               </div>

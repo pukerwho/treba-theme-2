@@ -69,7 +69,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
   <header>
-    <div class="header-top border-b border-gray-300 py-4 mb-0 lg:mb-4">
+    <div class="header-top border-b border-gray-300 dark:border-gray-600 py-4 mb-0 lg:mb-4">
       <div class="container">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
@@ -95,7 +95,19 @@
                 </svg>
               </div>
             </div>
-            <div class="flex items-center text-slate-700 lg:border-r lg:border-gray-400 lg:mr-4 lg:pr-4">
+            <div class="flex items-center text-slate-700 dark:text-slate-300 lg:border-r lg:border-gray-400 lg:mr-4 lg:pr-4">
+              <div class="cursor-pointer lg:border-r lg:border-gray-400 lg:mr-4 lg:pr-4">
+                <div class="hidden dark:block text-gray-200 js-toggle-light" data-light="off">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <div class="block dark:hidden dark:text-gray-200 js-toggle-light" data-light="on">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                </div>
+              </div>
               <div class="mr-3">
                 <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"/></svg>
               </div>
@@ -121,7 +133,7 @@
           ));
           foreach ( array_slice($all_cats, 0, 9) as $all_cat ): ?>
             <div class="px-4">
-              <a href="<?php echo get_term_link($all_cat); ?>" class="uppercase text-sm text-gray-700 font-semibold hover:text-blue-600"><?php echo $all_cat->name ?></a>
+              <a href="<?php echo get_term_link($all_cat); ?>" class="uppercase text-sm text-gray-700 dark:text-gray-300 font-semibold hover:text-blue-600 dark:hover:text-blue-500"><?php echo $all_cat->name ?></a>
             </div>
           <?php endforeach; ?>
         </div>

@@ -5,7 +5,7 @@
       <?php get_template_part("template-parts/sidebar"); ?>
     </div>
     <div class="w-full lg:w-3/4 lg:px-5">
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <?php 
             $currentId = get_the_ID();
@@ -60,19 +60,19 @@
             ));
           ?>
           <h1 class="text-2xl lg:text-3xl font-bold mb-8"><?php echo $heading; ?></h1>
-          <table class="w-full border bg-gray-100 table-auto mb-8">
+          <table class="w-full border dark:border-slate-400 bg-gray-100 dark:bg-transparent table-auto mb-8">
             <tbody>
-              <tr class="border-b border-gray-300">
+              <tr class="border-b border-gray-300 dark:border-slate-400">
                 <td class="font-semibold whitespace-nowrap px-2 py-3">📒 <?php _e("Кількість пропозицій", "treba-wp"); ?></td>
                 <td class="whitespace-nowrap px-2 py-3"><?php echo $company_posts->post_count; ?></td>
               </tr>
-              <tr class="border-b border-gray-300">
+              <tr class="border-b border-gray-300 dark:border-slate-400">
                 <td class="font-semibold whitespace-nowrap px-2 py-3">💲 <?php _e("Середня вартість послуги", "treba-wp"); ?></td>
                 <td class="whitespace-nowrap px-2 py-3">
                   20$/год.
                 </td>
               </tr>
-              <tr class="border-b border-gray-300">
+              <tr class="border-b border-gray-300 dark:border-slate-400">
                 <td class="font-semibold whitespace-nowrap px-2 py-3">🚀 <?php _e("Конкуренція", "treba-wp"); ?></td>
                 <td class="whitespace-nowrap px-2 py-3">
                   <?php if ($company_posts->post_count > 10) {
@@ -84,7 +84,7 @@
                   }; ?>
                 </td>
               </tr>
-              <tr class="border-b border-gray-300">
+              <tr class="border-b border-gray-300 dark:border-slate-400">
                 <td class="font-semibold whitespace-nowrap px-2 py-3">🕒 <?php _e("Інформація оновлена", "treba-wp"); ?></td>
                 <td class="whitespace-nowrap px-2 py-3"><?php echo date('d.m.Y',strtotime("-1 days")); ?></td>
               </tr>
@@ -100,9 +100,9 @@
           </div>
           <div class="mb-8">
             <h2 class="text-2xl font-medium mb-4"><?php _e("Яка ціна?", "treba-wp"); ?></h2>
-            <table class="w-full border table-auto ">
+            <table class="w-full border dark:border-slate-400 table-auto ">
 							<thead>
-								<tr class="bg-slate-200">
+								<tr class="bg-slate-200 dark:bg-transparent">
 									<th class="py-2"><?php _e('Компанія', 'treba-wp'); ?></th>
 									<th class="py-2"><?php _e('Ціна', 'treba-wp'); ?></th>
 								</tr>
@@ -141,7 +141,7 @@
           <!-- END Хлебные крошки -->
         <?php endwhile; endif; wp_reset_postdata(); ?>  
       </div>
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <div class="flex flex-wrap lg:-mx-6">
           <div class="w-full lg:w-1/2 lg:px-6 mb-6 lg:mb-0">
             <h2 class="inline-block text-2xl border-b-4 border-indigo-500 mb-4"><?php _e("Інші послуги", "treba-wp"); ?></h2>

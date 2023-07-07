@@ -12,7 +12,7 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
       <?php get_template_part("template-parts/sidebar"); ?>
     </div>
     <div class="w-full lg:w-3/4 lg:px-5">
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <h1 class="text-3xl lg:text-4xl font-bold mb-8"><?php single_term_title(); ?></h1>
         <div class="flex flex-wrap lg:-mx-4 mb-2">
           <?php 
@@ -59,7 +59,7 @@ $term = get_term_by('slug', get_query_var('term'), $taxonomyName);
         <?php endif; ?>
       </div>
 
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <div class="flex flex-wrap lg:-mx-6">
           <div class="w-full lg:w-1/2 lg:px-6 mb-6 lg:mb-0">
             <h2 class="inline-block text-2xl border-b-4 border-indigo-500 mb-4"><?php _e("Інші категорії", "treba-wp"); ?></h2>

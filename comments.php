@@ -39,11 +39,11 @@ if ( post_password_required() ) {
 	endif; // Check for have_comments().
 	?>
 
-	<div class="bg-gray-50 dark:bg-zinc-800 rounded-lg px-6 py-2">
+	<div class="bg-gray-50 dark:bg-slate-800 rounded-lg px-6 py-2">
 		<?php
 		comment_form(array(
 			'title_reply' => '',
-			'class_submit' => 'bg-blue-500 dark:bg-indigo-500 text-center text-gray-100 rounded-lg px-6 py-2 mb-4'
+			'class_submit' => 'bg-blue-500 dark:bg-blue-600 text-center text-gray-100 rounded-lg cursor-pointer px-6 py-2 mb-4'
 		));
 		?>	
 	</div>

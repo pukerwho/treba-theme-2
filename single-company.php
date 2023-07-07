@@ -11,7 +11,7 @@
       <?php get_template_part("template-parts/sidebar"); ?>
     </div>
     <div class="w-full lg:w-3/4 lg:px-5">
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <h1 class="text-2xl uppercase font-bold border-b border-gray-200 dark:border-zinc-500 mb-5 pb-5"><?php the_title(); ?></h1>
         <div class="border-b border-gray-200 dark:border-zinc-500 mb-5 pb-5">
           <h2 class="text-xl uppercase font-bold mb-4"><?php _e("Опис", "treba-wp"); ?></h2>
@@ -146,7 +146,7 @@
               </a>                        
               <meta itemprop="position" content="2">
             </li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item text-gray-600 px-4">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs_item text-gray-600 dark:text-gray-400 px-4">
               <span itemprop="name"><?php the_title(); ?></span>
               <meta itemprop="position" content="3" />
             </li>
@@ -155,7 +155,7 @@
         <!-- END Хлебные крошки -->
       </div>
 
-      <div class="bg-white shadow-lg rounded-lg p-4 lg:p-8 mb-10">
+      <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <div class="flex items-center mb-8">
           <div class="bg-slate-800 text-gray-300 rounded-lg p-1 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 lg:w-8 h-6 lg:h-8">

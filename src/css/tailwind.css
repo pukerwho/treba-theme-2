@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-custom-gray text-gray-800 dark:text-gray-300;
+  @apply bg-custom-gray text-gray-800 dark:text-gray-300 dark:bg-slate-800;
 }
 a {
   @apply cursor-pointer;
@@ -40,7 +40,7 @@ main {
   @apply px-2;
 }
 .header-menu a {
-  @apply bg-slate-200 hover:bg-slate-300 rounded px-4 py-2;  
+  @apply bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-900 rounded px-4 py-2;  
 }
 .header .sub-menu {
   @apply bg-gradient-to-r from-main-gray to-main-dark border-2 border-main-gray hover:text-white rounded-xl px-6 py-4;

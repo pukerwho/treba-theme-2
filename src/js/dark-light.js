@@ -13,11 +13,11 @@ if (
 $(".js-toggle-light").on("click", function () {
   dataLight = $(this).data("light");
   console.log(dataLight);
-  if (dataLight === "off") {
+  if (dataLight === "on") {
     document.documentElement.classList.add("dark");
     localStorage.theme = "dark";
   } else {
     document.documentElement.classList.remove("dark");
-    localStorage.theme = "on";
+    localStorage.theme = "light";
   }
 });

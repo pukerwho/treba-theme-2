@@ -1,7 +1,7 @@
 </div>
 <!-- end wrap -->
 
-<div class="bg-white rounded-lg m-2 py-4 lg:py-8 lg:p-8">
+<div class="bg-white dark:bg-slate-700 rounded-lg m-2 py-4 lg:py-8 lg:p-8">
   <div class="container">
     <div class="text-xl font-bold mb-4">🔍 <?php _e("Популярні запити", "treba-wp"); ?>:</div>
     <div class="flex flex-wrap lg:-mx-2 px-2 py-2">
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<footer class="bg-white rounded-lg m-2 py-4 lg:py-8 lg:p-8">
+<footer class="bg-white dark:bg-slate-700 rounded-lg m-2 py-4 lg:py-8 lg:p-8">
   <div class="container">
     <div class="flex flex-col lg:flex-row lg:justify-between">
       <div class="mb-4 lg:mb-0">
