@@ -52,3 +52,10 @@ body {
 .pagination .page-numbers:hover:before {
   color: white;
 }
+
+pre.wp-block-preformatted {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
