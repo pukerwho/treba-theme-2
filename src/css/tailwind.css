@@ -79,6 +79,9 @@ main {
   @apply bg-slate-800 border-main-dark text-gray-200;
 }
 
+.content {
+  @apply break-words;
+}
 .content a {
   @apply cursor-pointer text-primary;
 }
