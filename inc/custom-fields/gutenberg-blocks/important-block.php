@@ -11,8 +11,8 @@ Block::make( 'TREBA Important Block' )
 		?>
     
     <div class="bg-emerald-100 border-l-8 border-emerald-500 rounded px-4 pl-4 lg:pl-8 py-4 mb-4">
-      <div class="custom-style-text">
-        <?php echo esc_html( $fields['crb_post_important_block'] ); ?>
+      <div class="content">
+        <p><?php echo esc_html( $fields['crb_post_important_block'] ); ?></p>
       </div>
     </div>
 
