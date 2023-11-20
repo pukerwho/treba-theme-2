@@ -6,7 +6,7 @@ function dateCountdown($atts) {
 	), $atts );
 	ob_start();
 ?>
-<div class="text-2xl text-center mb-4"><?php _e("До Нового року залишилося", "treba-wp"); ?>:</div>
+<div class="text-2xl text-center mb-4"><?php echo carbon_get_the_post_meta('crb_countdown_title'); ?>:</div>
 <div class="flex justify-center mb-4">
   <div id="shortcode-countdown" class="inline-flex ">
     <div class="flex justify-center -mx-4">
