@@ -15,6 +15,7 @@ if ( ! function_exists( 'treba_wp_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__( 'Header', 'treba-wp' ),
+        'countdown' => esc_html__( 'Countdown', 'treba-wp' ),
         'mobile' => esc_html__( 'Mobile', 'treba-wp' ),
         'lang_header' => esc_html__( 'Lang', 'treba-wp' ),
 			)
@@ -35,6 +36,7 @@ include('inc/create-custom-posts.php');
 include('inc/create-custom-taxonomy.php');
 include('inc/seo-functions.php');
 include('inc/footer-links.php');
+include('inc/shortcodes/days.php');
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;

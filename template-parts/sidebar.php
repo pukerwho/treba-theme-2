@@ -72,4 +72,15 @@
       <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
   </div>
+
+  <div class="p-4 mb-4">
+    <div class="text-xl font-bold mb-4"><?php _e("Скільки днів до", "treba-wp"); ?>...</div>
+    <div>
+      <?php wp_nav_menu([
+        'theme_location' => 'countdown',
+        'container' => 'div',
+        'menu_class' => 'div',
+      ]); ?> 
+    </div>
+  </div>
 </div>
