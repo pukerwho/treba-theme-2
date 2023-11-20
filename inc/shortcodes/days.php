@@ -1,6 +1,6 @@
 <?php 
-function newYearCountdown($atts) {
-	$params_new_year_countdown = shortcode_atts( array(
+function dateCountdown($atts) {
+	$params_date_countdown = shortcode_atts( array(
 		'id' => 1,
 		'text' => 'Hello',
 	), $atts );
@@ -20,9 +20,10 @@ function newYearCountdown($atts) {
 
 <script>
   function updateCountdown() {
-    var newYearDate = new Date("January 1, 2024 00:00:00 GMT+00:00");
+    var getCountdownDate = document.getElementById("countdown-date").dataset.countdown;
+    var countdownDate = new Date(getCountdownDate + " 00:00:00 GMT+02:00");
     var currentDate = new Date();
-    var timeDiff = newYearDate - currentDate;
+    var timeDiff = countdownDate - currentDate;
     var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
@@ -40,4 +41,4 @@ function newYearCountdown($atts) {
 	wp_reset_postdata();
 	return $out;
 }
-add_shortcode( 'new_year_countdown', 'newYearCountdown' );
+add_shortcode( 'date_countdown', 'dateCountdown' );

@@ -12,6 +12,10 @@
           <?php if (get_the_post_thumbnail_url()): ?>
             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-80 xl:h-full object-cover rounded-lg mb-6">
           <?php endif; ?>
+          <?php if (carbon_get_the_post_meta('crb_countdown_date')): ?>
+
+            <div id="countdown-date" data-countdown="<?php echo carbon_get_the_post_meta('crb_countdown_date'); ?>"></div>
+          <?php endif; ?>
           <div class="content" >
             <?php the_content(); ?>
           </div>
