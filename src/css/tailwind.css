@@ -127,7 +127,15 @@ main {
 .content .wp-block-image figcaption {
   @apply text-center italic mt-4 mb-0;
 }
-
+.single .content label {
+  @apply block text-lg font-medium mb-4;
+}
+.single .content input[type="number"] {
+  @apply w-full border border-gray-300 rounded px-4 py-2 mb-4;
+}
+.single .content button {
+  @apply bg-indigo-500 text-gray-100 rounded px-4 py-2 mb-4;
+}
 .treba-links a {
   @apply block text-sm mb-1;
 }
