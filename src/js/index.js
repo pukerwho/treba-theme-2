@@ -5,4 +5,5 @@ import "./tabs.js";
 import "./dark-light.js";
 import "./chars.js";
 import "./menu.js";
+import "./vote.js";
 import "./subjects.js";

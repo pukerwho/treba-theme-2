@@ -36,6 +36,7 @@ include('inc/create-custom-posts.php');
 include('inc/create-custom-taxonomy.php');
 include('inc/seo-functions.php');
 include('inc/footer-links.php');
+include('inc/vote.php');
 include('inc/shortcodes/days.php');
 
 use Carbon_Fields\Container;
@@ -51,6 +52,7 @@ function crb_load() {
     require_once get_template_directory() . '/inc/custom-fields/post-meta.php';
     require_once get_template_directory() . '/inc/custom-fields/page-meta.php';
     require_once get_template_directory() . '/inc/custom-fields/term-meta.php';
+    require_once get_template_directory() . '/inc/custom-fields/menu-meta.php';
     require_once get_template_directory() . '/inc/custom-fields/gutenberg-blocks.php';
 
 }
