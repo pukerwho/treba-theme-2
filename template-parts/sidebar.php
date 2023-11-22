@@ -1,36 +1,5 @@
 <div class="bg-white dark:bg-slate-700 rounded-lg mb-6">
   <div class="p-4 mb-4">
-    <div class="text-xl font-bold mb-4"><?php _e("Категорії в каталозі", "treba-wp"); ?></div>
-    <div>
-      <?php 
-      $services = get_terms(array( 'taxonomy' => 'services', 'parent' => 0, 'hide_empty' => false ));
-      foreach($services as $service): ?>
-        <div class="text-base border-b dark:border-slate-400 dark:last-of-type:border-transparent pb-3 mb-3 last-of-type:border-transparent last-of-type:pb-0 last-of-type:mb-0">
-          <a href="<?php echo get_term_link($service->term_id, 'services') ?>" class="text-gray-700 dark:text-gray-300 hover:text-blue-600"><?php echo $service->name; ?></a>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-  <div class="p-4 mb-4">
-    <div class="text-xl font-bold mb-4"><?php _e("Популярні компанії", "treba-wp"); ?></div>
-    <div>
-      <?php 
-        $all_posts = new WP_Query( array( 
-          'post_type' => 'company', 
-          'posts_per_page' => 5,
-          'orderby' => 'rand',
-        ) );
-        if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
-      ?>
-        <div class="border-b pb-3 mb-3 last-of-type:border-transparent dark:border-slate-400 dark:last-of-type:border-transparent last-of-type:mb-0 last-of-type:pb-0">
-          <div class="text-base"><a href="<?php the_permalink(); ?>" class="hover:text-blue-500"><?php the_title(); ?></a></div>
-          <div class="text-sm font-medium text-gray-500 dark:text-gray-400"><?php _e("Місто", "treba-wp"); ?>: <?php echo carbon_get_the_post_meta('crb_company_city'); ?></div>
-        </div>
-      <?php endwhile; endif; wp_reset_postdata(); ?>
-    </div>
-  </div>
-
-  <div class="p-4 mb-4">
     <div class="text-xl font-bold mb-4"><?php _e("Популярні статті", "treba-wp"); ?></div>
     <div>
       <?php 
@@ -175,5 +144,38 @@
       </div>
     </div>
     <div class="text-center font-medium"><?php _e("Всього голосів", "treba-wp"); ?>: <span id="vote-count"><?php echo $vote_count; ?></span></div>
+  </div>
+</div>
+
+<div class="bg-white dark:bg-slate-700 rounded-lg mb-6">
+  <div class="p-4 mb-4">
+    <div class="text-xl font-bold mb-4"><?php _e("Категорії в каталозі", "treba-wp"); ?></div>
+    <div>
+      <?php 
+      $services = get_terms(array( 'taxonomy' => 'services', 'parent' => 0, 'hide_empty' => false ));
+      foreach($services as $service): ?>
+        <div class="text-base border-b dark:border-slate-400 dark:last-of-type:border-transparent pb-3 mb-3 last-of-type:border-transparent last-of-type:pb-0 last-of-type:mb-0">
+          <a href="<?php echo get_term_link($service->term_id, 'services') ?>" class="text-gray-700 dark:text-gray-300 hover:text-blue-600"><?php echo $service->name; ?></a>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="p-4 mb-4">
+    <div class="text-xl font-bold mb-4"><?php _e("Популярні компанії", "treba-wp"); ?></div>
+    <div>
+      <?php 
+        $all_posts = new WP_Query( array( 
+          'post_type' => 'company', 
+          'posts_per_page' => 5,
+          'orderby' => 'rand',
+        ) );
+        if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
+      ?>
+        <div class="border-b pb-3 mb-3 last-of-type:border-transparent dark:border-slate-400 dark:last-of-type:border-transparent last-of-type:mb-0 last-of-type:pb-0">
+          <div class="text-base"><a href="<?php the_permalink(); ?>" class="hover:text-blue-500"><?php the_title(); ?></a></div>
+          <div class="text-sm font-medium text-gray-500 dark:text-gray-400"><?php _e("Місто", "treba-wp"); ?>: <?php echo carbon_get_the_post_meta('crb_company_city'); ?></div>
+        </div>
+      <?php endwhile; endif; wp_reset_postdata(); ?>
+    </div>
   </div>
 </div>
