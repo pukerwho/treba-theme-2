@@ -12,36 +12,39 @@ $countNumber = tutCount(get_the_ID());
       <div class="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-4 lg:p-8 mb-10">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article itemscope itemtype="http://schema.org/Article">
-          <h1 class="text-2xl uppercase font-bold mb-4" itemprop="headline"><?php the_title(); ?></h1>
-          <div class="text-sm opacity-75 border-b border-gray-200 dark:border-slate-400 mb-3 pb-3">
-            <div>
-              <span class="italic"><?php _e("Автор", "treba-wp"); ?></span>: 
-              <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
-                <span class="italic"><?php echo carbon_get_the_post_meta('crb_post_author'); ?></span>
-                <div class="flex items-center text-sm">
-                  <!-- instagram -->
-                  <?php if (carbon_get_the_post_meta('crb_post_author_instagram')): ?>
-                    <div class="italic pb-2 pr-3"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_instagram'); ?>" class="text-indigo-500">Instagram</a></div>
-                  <?php endif; ?>
-                  <!-- facebook --> 
-                  <?php if (carbon_get_the_post_meta('crb_post_author_facebook')): ?>
-                    <div class="italic pb-2"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_facebook'); ?>" class="text-indigo-500">Facebook</a></div>
-                  <?php endif; ?>
-                </div>
-
-              <?php else: ?>
-                <?php echo get_the_author(); ?>
-              <?php endif; ?>
-            </div>
-            
-          </div>
+          <h1 class="text-2xl uppercase font-bold border-b border-gray-200 dark:border-slate-400 pb-4 mb-4" itemprop="headline"><?php the_title(); ?></h1>
           <div class="flex flex-col xl:flex-row xl:-mx-4 mb-6">
-            <div class="w-full xl:w-3/4 xl:px-4 mb-6 xl:mb-0">
+            <div class="w-full xl:w-3/4 xl:px-4 xl:mb-0">
               <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full object-cover rounded-lg border shadow-xl mr-4 mb-6 lg:mb-0" itemprop="image">
             </div>
-            <div class="w-full xl:w-1/4  xl:px-4">
+            <div class="w-full xl:w-1/4 xl:px-4">
               <div class="sticky top-4">
-                <div class="border-b border-gray-300 dark:border-slate-400 pb-4 mb-4">
+                <div class="text-sm opacity-75 border-b border-gray-200 dark:border-slate-400 mb-3 pb-3">
+                  <div>
+                    <span class="font-medium"><?php _e("Автор", "treba-wp"); ?></span>: 
+                    <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
+                      <span class="italic"><?php echo carbon_get_the_post_meta('crb_post_author'); ?></span>
+                      <div class="flex items-center text-sm">
+                        <!-- instagram -->
+                        <?php if (carbon_get_the_post_meta('crb_post_author_instagram')): ?>
+                          <div class="italic pb-2 pr-3"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_instagram'); ?>" class="text-indigo-500">Instagram</a></div>
+                        <?php endif; ?>
+                        <!-- facebook --> 
+                        <?php if (carbon_get_the_post_meta('crb_post_author_facebook')): ?>
+                          <div class="italic pb-2"><a href="<?php echo carbon_get_the_post_meta('crb_post_author_facebook'); ?>" class="text-indigo-500">Facebook</a></div>
+                        <?php endif; ?>
+                      </div>
+
+                    <?php else: ?>
+                      <?php echo get_the_author(); ?>
+                    <?php endif; ?>
+                  </div>
+                  <?php if (carbon_get_the_post_meta('crb_post_editor')): ?>
+                    <div><span class="font-medium"><?php _e("Редактор", "treba-wp"); ?></span>: <span class="italic"><?php echo carbon_get_the_post_meta('crb_post_editor'); ?></span></div>
+                  <?php endif; ?>
+                  
+                </div>
+                <div class="border-b border-gray-200 dark:border-slate-400 pb-4 mb-4">
                   <div class="text-lg mb-2">📎 <?php _e("Поділитися", "treba-wp"); ?></div>
                   <div>
                     <?php do_action('show_social_share_buttons'); ?>
