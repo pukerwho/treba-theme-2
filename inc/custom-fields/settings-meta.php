@@ -8,6 +8,13 @@ function crb_attach_theme_options() {
   Container::make( 'theme_options', __('Treba Settings') )
   ->add_tab( __('General'), array(
     Field::make( 'text', 'crb_footer_links_numbers', 'Кількість посилань' ),
+    Field::make( 'association', 'crb_top_posts', 'Топ посилання')
+      ->set_types( array(
+        array(
+          'type'      => 'post',
+          'post_type' => 'post',
+        )
+      ) )
   ))
   ->add_tab( __('SEO'), array(
     Field::make( 'html', 'crb_seo_mainpage', __( 'SEO Mainpage' ) )->set_html( sprintf( '<b>ℹ️ Main page</b>' ) ),

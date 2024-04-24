@@ -3,99 +3,74 @@
 <div class="welcome bg-slate-800 py-8 mb-8">
   <div class="container">
     <div class="mb-8">
-      <?php 
-        $new_post = new WP_Query( array( 
-          'post_type' => 'post', 
-          'posts_per_page' => 1,
-          'order' => 'DESC',
-          'meta_query' => array(
-            array(
-              'key' => '_crb_post_mainhide',
-              'value' => 'yes',
-              'compare' => '!='
-            ),
-          ),
-        ) );
-        if ($new_post->have_posts()) : while ($new_post->have_posts()) : $new_post->the_post(); 
+      <?php $top_posts = carbon_get_theme_option('crb_top_posts'); $main_top_post_id = $top_posts[0]['id'];
       ?>
-        <div class="flex flex-wrap items-center lg:-mx-6">
-          <div class="w-full lg:w-1/2 lg:px-6">
-            <div class="mb-8">
-              <?php
-              $post_categories = get_the_terms( $new_posts->ID, 'category' );
-              foreach ($post_categories as $post_category){ ?>
-                <a href="<?php echo get_term_link($post_category->term_id, 'category') ?>" class="text-lg bg-black/50 hover:bg-black/75 rounded text-gray-300 px-4 py-2"><?php echo $post_category->name; ?></a> 
-              <?php } ?>
-            </div>
-            <div class="mb-8"><a href="<?php the_permalink(); ?>" class="text-4xl text-white hover:underline"><?php the_title(); ?></a></div>
-            <div class="flex flex-col lg:flex-row lg:items-center text-gray-400 mb-8 lg:mb-0">
-              <div class="mr-4"><?php echo get_the_date('d.m.Y'); ?></div>
-              <div class="hidden lg:block mr-4">|</div>
-              <div class="mr-4">
-                <?php _e("Комментарів", "treba-wp"); ?>: <?php echo get_comments_number(); ?>
-              </div>
-              <div class="hidden lg:block mr-4">|</div>
-              <div>
-                <?php _e("Переглядів", "treba-wp"); ?>: <?php echo get_post_meta( get_the_ID(), 'post_count', true ); ?>;
-              </div>            
-            </div>
+      <div class="flex flex-wrap items-center lg:-mx-6">
+        <div class="w-full lg:w-1/2 lg:px-6">
+          <div class="mb-8">
+            <?php
+            $post_categories = get_the_terms( $main_top_post_id, 'category' );
+            foreach ($post_categories as $post_category){ ?>
+              <a href="<?php echo get_term_link($post_category->term_id, 'category') ?>" class="text-lg bg-black/50 hover:bg-black/75 rounded text-gray-300 px-4 py-2"><?php echo $post_category->name; ?></a> 
+            <?php } ?>
           </div>
-          <div class="w-full lg:w-1/2 lg:px-6">
-            <?php 
-              $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-              $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
-            ?>
-            <img 
-            class="w-full object-cover rounded-lg" 
-            alt="<?php the_title(); ?>" 
-            src="<?php echo $medium_thumb; ?>" 
-            srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" 
-            loading="lazy" 
-            data-src="<?php echo $medium_thumb; ?>" 
-            data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
+          <div class="mb-8">
+            <a href="<?php echo get_the_permalink($main_top_post_id); ?>" class="text-4xl text-white hover:underline"><?php echo get_the_title($main_top_post_id); ?></a>
+          </div>
+          <div class="flex flex-col lg:flex-row lg:items-center text-gray-400 mb-8 lg:mb-0">
+            <div class="mr-4">
+              <?php _e("Комментарів", "treba-wp"); ?>: <?php echo get_comments_number($main_top_post_id); ?>
+            </div>
+            <div class="hidden lg:block mr-4">|</div>
+            <div>
+              <?php _e("Переглядів", "treba-wp"); ?>: <?php echo get_post_meta( $main_top_post_id, 'post_count', true ); ?>;
+            </div>            
           </div>
         </div>
-      <?php endwhile; endif; wp_reset_postdata(); ?>
+        <div class="w-full lg:w-1/2 lg:px-6">
+          <?php 
+            $medium_thumb = get_the_post_thumbnail_url($main_top_post_id, 'medium');
+            $large_thumb = get_the_post_thumbnail_url($main_top_post_id, 'large');
+          ?>
+          <img 
+          class="w-full object-cover rounded-lg" 
+          alt="<?php echo get_the_title($main_top_post_id); ?>" 
+          src="<?php echo $medium_thumb; ?>" 
+          srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" 
+          loading="lazy" 
+          data-src="<?php echo $medium_thumb; ?>" 
+          data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
+        </div>
+      </div>
+      
+      
     </div>
 
     <div class="flex flex-wrap lg:-mx-4">
-      <?php 
-        $new_posts = new WP_Query( array( 
-          'post_type' => 'post', 
-          'posts_per_page' => 4,
-          'order' => 'DESC',
-          'offset' => 1,
-          'meta_query' => array(
-            array(
-              'key' => '_crb_post_mainhide',
-              'value' => 'yes',
-              'compare' => '!='
-            ),
-          ),
-        ) );
-        if ($new_posts->have_posts()) : while ($new_posts->have_posts()) : $new_posts->the_post(); 
-      ?>
+      <?php foreach (array_slice($top_posts, 1) as $top_post): ?>
+        <?php $top_post_id = $top_post['id'];  ?>
         <div class="w-full lg:w-1/4 lg:px-4 mb-4 last-of-type:mb-0 lg:mb-0">
           <div class="relative flex items-center bg-slate-700 hover:bg-slate-900/50 rounded-lg p-2">
-            <a href="<?php the_permalink(); ?>" class="absolute-link"></a>
+            <a href="<?php echo get_the_permalink($top_post_id); ?>" class="absolute-link"></a>
             <div class="mr-2">
               <?php 
-                $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-                $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                $medium_thumb = get_the_post_thumbnail_url($top_post_id, 'medium');
+                $large_thumb = get_the_post_thumbnail_url($top_post_id, 'large');
               ?>
               <img 
               class="w-[64px] min-w-[64px] h-[64px] min-h-[64px] object-cover rounded-lg" 
-              alt="<?php the_title(); ?>" 
+              alt="<?php echo get_the_title($top_post_id); ?>" 
               src="<?php echo $medium_thumb; ?>" 
               srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" 
               loading="lazy" 
               data-src="<?php echo $medium_thumb; ?>" 
               data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
             </div>
-            <div class="text-gray-300"><?php the_title(); ?></div>
+            <div class="text-gray-300"><?php echo get_the_title($top_post_id); ?></div>
           </div>    
         </div>
-      <?php endwhile; endif; wp_reset_postdata(); ?>
+      <?php endforeach; ?>
+      
     </div>
   </div>
 </div>
@@ -121,7 +96,6 @@
               'post_type' => 'post', 
               'posts_per_page' => 9,
               'order' => 'DESC',
-              'offset' => 5,
               'meta_query' => array(
                 array(
                   'key' => '_crb_post_mainhide',
