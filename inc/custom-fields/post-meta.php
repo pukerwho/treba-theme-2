@@ -19,6 +19,7 @@ function crb_post_theme_options() {
       Field::make( 'text', 'crb_post_author_facebook', 'Фейсбук автора' ),
       Field::make( 'text', 'crb_post_editor', 'Редактор' ),
       Field::make( 'checkbox', 'crb_post_mainhide', 'Не виводити на головній сторінці' ),
+      Field::make( 'checkbox', 'crb_post_moskal', 'Не українською мовою' ),
   ) );
   Container::make( 'post_meta', 'More' )
     ->where( 'post_type', '=', 'company' )
