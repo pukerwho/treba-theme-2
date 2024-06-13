@@ -16,6 +16,7 @@ if ( ! function_exists( 'treba_wp_setup' ) ) :
 			array(
 				'header' => esc_html__( 'Header', 'treba-wp' ),
         'countdown' => esc_html__( 'Countdown', 'treba-wp' ),
+        'ourmenu' => esc_html__( 'Наш вибір', 'treba-wp' ),
         'mobile' => esc_html__( 'Mobile', 'treba-wp' ),
         'lang_header' => esc_html__( 'Lang', 'treba-wp' ),
 			)

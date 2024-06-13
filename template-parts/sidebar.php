@@ -179,3 +179,30 @@
     </div>
   </div>
 </div>
+
+<div class="bg-white dark:bg-slate-700 rounded-lg mb-6">
+  <div class="p-4 mb-4">
+    <div class="text-xl font-bold mb-4"><?php _e("Наш вибір", "treba-wp"); ?></div>
+    <div>
+      <?php
+        $menu_name = 'ourmenu';
+        $locations = get_nav_menu_locations();
+
+        if( $locations && isset( $locations[ $menu_name ] ) ){
+          $menu_items = wp_get_nav_menu_items( $locations[ $menu_name ] );
+
+          $menu_list = '<ul id="menu-' . $menu_name . '" class="">';
+          foreach ( (array) $menu_items as $key => $menu_item ){
+            $menu_list .= '<li class="flex items-center mb-2"><a href="' . $menu_item->url . '" class="">' . $menu_item->title . '</a></li>';
+          }
+          $menu_list .= '</ul>';
+        }
+        else {
+          $menu_list = '<ul><li>Меню "' . $menu_name . '" не определено.</li></ul>';
+        }
+
+        echo $menu_list;
+      ?>
+    </div>
+  </div>
+</div>
