@@ -182,27 +182,52 @@
 
 <div class="bg-white dark:bg-slate-700 rounded-lg mb-6">
   <div class="p-4 mb-4">
-    <div class="text-xl font-bold mb-4"><?php _e("Наш вибір", "treba-wp"); ?></div>
+    <div class="text-xl font-bold mb-4"><?php _e("Зараз читають", "treba-wp"); ?></div>
     <div>
-      <?php
-        $menu_name = 'ourmenu';
-        $locations = get_nav_menu_locations();
-
-        if( $locations && isset( $locations[ $menu_name ] ) ){
-          $menu_items = wp_get_nav_menu_items( $locations[ $menu_name ] );
-
-          $menu_list = '<ul id="menu-' . $menu_name . '" class="">';
-          foreach ( (array) $menu_items as $key => $menu_item ){
-            $menu_list .= '<li class="flex items-center mb-2"><a href="' . $menu_item->url . '" class="">' . $menu_item->title . '</a></li>';
-          }
-          $menu_list .= '</ul>';
-        }
-        else {
-          $menu_list = '<ul><li>Меню "' . $menu_name . '" не определено.</li></ul>';
-        }
-
-        echo $menu_list;
+      <?php 
+        $all_posts = new WP_Query( array( 
+          'post_type' => 'post', 
+          'posts_per_page' => 10,
+          'orderby' => 'rand',
+          'meta_query' => array(
+            array(
+              'key' => '_crb_post_keywords',
+              'value' => '',
+              'compare' => '='
+            ),
+          ),
+          'tax_query' => array(
+            array(
+              'taxonomy'  => 'category',
+              'field'     => 'term_id',
+              'terms'     => array( 373, 369, 382),
+            )
+          ),
+        ) );
+        if ($all_posts->have_posts()) : while ($all_posts->have_posts()) : $all_posts->the_post(); 
       ?>
+        <div class="flex relative border-b pb-3 mb-3 last-of-type:border-transparent dark:border-slate-400 dark:last-of-type:border-transparent last-of-type:mb-0 last-of-type:pb-0">
+          <a href="<?php the_permalink(); ?>" class="absolute-link"></a>
+          <div class="mr-2">
+            <?php 
+              $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+              $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+            ?>
+            <img 
+            class="w-[65px] min-w-[65px] h-[65px] min-h-[65px] object-cover rounded-lg" 
+            alt="<?php the_title(); ?>" 
+            src="<?php echo $medium_thumb; ?>" 
+            srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" 
+            loading="lazy" 
+            data-src="<?php echo $medium_thumb; ?>" 
+            data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
+          </div>
+          <div>
+            <div class="text-base mb-1"><?php the_title(); ?></div>
+            <div class="text-sm font-medium text-gray-500 dark:text-gray-400"><?php _e("Переглядів", "treba-wp"); ?>: <?php echo get_post_meta( get_the_ID(), 'post_count', true ); ?>;</div>
+          </div>
+        </div>
+      <?php endwhile; endif; wp_reset_postdata(); ?>
     </div>
   </div>
 </div>
