@@ -6,7 +6,6 @@
         $all_posts = new WP_Query( array( 
           'post_type' => 'post', 
           'posts_per_page' => 5,
-          'orderby' => 'rand',
           'meta_query' => array(
             array(
               'key' => '_crb_post_mainhide',
