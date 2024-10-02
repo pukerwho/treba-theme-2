@@ -118,11 +118,14 @@ main {
 .content li:last-of-type {
   @apply mb-0;
 }
-.content .wp-block-image {
+.content .wp-block-image:not(.is-style-small) {
   @apply border shadow-xl rounded-lg p-5 mb-8;
 }
 .content .wp-block-image img {
   @apply w-full;
+}
+.content .is-style-small img {
+  @apply w-auto;
 }
 .content .wp-block-image figcaption {
   @apply text-center italic mt-4 mb-0;
