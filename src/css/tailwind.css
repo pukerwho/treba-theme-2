@@ -124,6 +124,9 @@ main {
 .content .wp-block-image img {
   @apply w-full;
 }
+.content .is-style-small {
+  @apply mb-6;
+}
 .content .is-style-small img {
   @apply w-auto;
 }

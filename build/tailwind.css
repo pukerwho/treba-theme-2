@@ -2056,6 +2056,10 @@ main {
   width: 100%;
 }
 
+.content .is-style-small {
+  margin-bottom: 1.5rem;
+}
+
 .content .is-style-small img {
   width: auto;
 }
