@@ -30,6 +30,8 @@ if ( ! function_exists( 'treba_wp_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'treba_wp_setup' );
 
+remove_action( 'wp_head', '_wp_render_title_tag', 1 );
+
 include('inc/enqueues.php');
 include('inc/share-social.php');
 include('inc/comments-functions.php');

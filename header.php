@@ -53,7 +53,7 @@
     <?php if (carbon_get_the_post_meta('crb_post_author')): ?>
       <meta property="og:article:author" content="<?php echo carbon_get_the_post_meta('crb_post_author'); ?>" />
     <?php else: ?>
-      <meta property="og:article:author" content="<?php echo get_the_author(); ?>" />
+      <meta property="og:article:author" content="<?php $author_id = get_post_field('post_author', get_the_ID()); $author_name = get_the_author_meta('display_name', $author_id); echo $author_name; ?>" />
     <?php endif; ?>
   <?php endif; ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
