@@ -7,3 +7,4 @@ import "./chars.js";
 import "./menu.js";
 import "./vote.js";
 import "./subjects.js";
+import "./custom.js";
